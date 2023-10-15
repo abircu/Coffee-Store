@@ -1,16 +1,16 @@
 import React from "react";
 
 const AddCoffe = () => {
-  const handleAddCoffee = (event) => {
-    event.preventDefault();
-    const form = event.target;
+  const handleAddCoffee = (e) => {
+    e.preventDefault();
+    const form = e.target;
     const name = form.name.value;
-    const suplierName = form.suplier.value;
+    const suplier = form.suplier.value;
     const taste = form.taste.value;
-    const category = form.category.value;
+    const category = form.Category.value;
     const details = form.details.value;
 
-    const newCoffee = { name, suplierName, taste, category, details };
+    const newCoffee = { name, suplier, taste, category, details };
     console.log(newCoffee);
     console.log("butotoms dsfjsd");
   };
@@ -27,69 +27,46 @@ const AddCoffe = () => {
         </p>
       </div>
       <form onSubmit={handleAddCoffee}>
-        <div className="grid grid-cols-1 md:grid-cols-2  justify-center px-6 md:px-20">
-          <div className="grid col-span-1 w-full gap-4 justify-center mb-4">
+        <div className="flex w-full p-10 md:p-24 gap-6 flex-col md:flex-row">
+          <div className=" form-control w-full md:w-[45%]">
             <label>Name</label>
             <input
               type="text"
               name="name"
-              placeholder="Type here name here"
-              className="input input-bordered input-primary "
+              id=""
+              placeholder="Enter your name"
             />
-            <label>Suplier name</label>
+            <label>suplier</label>
             <input
               type="text"
               name="suplier"
-              placeholder="Type here suplier name"
-              className="input input-bordered input-primary "
+              id=""
+              placeholder="Enter suplier name"
             />
             <label>Taste</label>
-            <input
-              type="text"
-              name="teste"
-              placeholder="Type here teste"
-              className="input input-bordered input-primary "
-            />
+            <input type="text" name="taste" id="" placeholder="Enter taste" />
           </div>
-          {/* another colums */}
-          <div className="grid col-span-1 w-full justify-center gap-4 mb-4">
+          <div
+            className="form-control w-full
+           md:w-[45%]"
+          >
             <label>Category</label>
             <input
               type="text"
-              name="category"
-              placeholder="Type here your category"
-              className="input input-bordered input-primary "
+              name="Category"
+              id=""
+              placeholder="Enter category"
             />
-            <label>Details</label>
+            <label>details</label>
             <input
               type="text"
               name="details"
-              placeholder="Type here about Details"
-              className="input input-bordered input-primary "
-            />
-            <label>Optional</label>
-            <input
-              type="text"
-              placeholder="Type here"
-              className="input input-bordered input-primary "
-            />
-          </div>
-          <div className="grid col-span-2 w-[60%] mx-[20%] ">
-            <label>Photo URL</label>
-            <input
-              className="px-3 py-2 mb-4"
-              type="text"
-              name="photourl"
               id=""
-              placeholder="Enter Photo URL"
+              placeholder="write details"
             />
           </div>
         </div>
-        <input
-          className="p-2 bg-[#D2B48C] rounded-lg"
-          type="submit"
-          value="Add coffee"
-        />
+        <input type="submit" value="submit" className="w-full bg-green-300" />
       </form>
     </div>
   );
