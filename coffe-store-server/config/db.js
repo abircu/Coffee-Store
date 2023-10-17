@@ -14,7 +14,7 @@ const connectDB = async () => {
     // Connect the client to the server	(optional starting in v4.7)
     await client.connect();
   
-    const dbName=client.db('usersDB');
+    const dbName=  await client.db('usersDB');
     await client.db("admin").command({ ping: 1 });
     console.log("Pinged your deployment. You successfully connected to MongoDB!");
     return dbName
